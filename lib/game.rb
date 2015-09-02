@@ -20,10 +20,8 @@ class Game
 
       check
 
-      if @win
-        puts "\nYou guessed it! The number was #{@num}"
-        break
-      end
+      check_for_win
+
       @prev_guess = @guess
     end
 
@@ -53,6 +51,13 @@ class Game
       puts "\nYou are a moron, that is lower still!"
     elsif @high && @guess > @prev_guess
       puts "\nYou are a moron, that is higher still!"
+    end
+  end
+
+  def check_for_win
+    if @win
+      puts "\nYou guessed it! The number was #{@num}"
+      exit
     end
   end
 
