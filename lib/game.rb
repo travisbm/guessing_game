@@ -16,13 +16,7 @@ class Game
       print "\nGuess a number between 1 - 100 > "
       @guess = gets.chomp.to_i
 
-      if @guess == @prev_guess
-        puts "\nAre you drunk?!"
-      elsif @low && @guess < @prev_guess
-        puts "\nYou are a moron, that is lower still!"
-      elsif @high && @guess > @prev_guess
-        puts "\nYou are a moron, that is higher still!"
-      end
+      check_guess_waste
 
       check
 
@@ -36,7 +30,6 @@ class Game
     unless @win
     puts "\nThe number was #{@num}, better luck next time."
     end
-
   end
 
   def check
@@ -50,6 +43,16 @@ class Game
       @low = false
     else
       @win = true
+    end
+  end
+
+  def check_guess_waste
+    if @guess == @prev_guess
+      puts "\nAre you drunk?!"
+    elsif @low && @guess < @prev_guess
+      puts "\nYou are a moron, that is lower still!"
+    elsif @high && @guess > @prev_guess
+      puts "\nYou are a moron, that is higher still!"
     end
   end
 
