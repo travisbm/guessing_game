@@ -50,13 +50,13 @@ class Game
       `say "#{msg}"`
       puts "\n#{msg}"#"\nAre you drunk?!"
     elsif @low && @guess < @prev_guess
+      puts "\nYou are a moron, that is lower still!"
       msg = "You are a moron, that is lower still!"
       `say "#{msg}"`
-      puts "\nYou are a moron, that is lower still!"
     elsif @high && @guess > @prev_guess
+      puts "\nYou are a moron, that is higher still!"
       msg = "You are a moron, that is higher still!"
       `say "#{msg}"`
-      puts "\nYou are a moron, that is higher still!"
     end
   end
 
