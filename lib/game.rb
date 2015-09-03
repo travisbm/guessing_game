@@ -46,10 +46,16 @@ class Game
 
   def check_guess_waste
     if @guess == @prev_guess
-      puts "\nAre you drunk?!"
+      msg = "Are you drunk?!"
+      `say "#{msg}"`
+      puts "\n#{msg}"#"\nAre you drunk?!"
     elsif @low && @guess < @prev_guess
+      msg = "You are a moron, that is lower still!"
+      `say "#{msg}"`
       puts "\nYou are a moron, that is lower still!"
     elsif @high && @guess > @prev_guess
+      msg = "You are a moron, that is higher still!"
+      `say "#{msg}"`
       puts "\nYou are a moron, that is higher still!"
     end
   end
